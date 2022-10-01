@@ -1,0 +1,9 @@
+{
+    "include": ["src/**/*"],
+    "compilerOptions": {
+        "target": "ES6",
+        "outDir": "scripts",
+        "allowJs": true,
+        "checkJs": true
+    }
+}

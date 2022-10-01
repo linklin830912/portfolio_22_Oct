@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "2022_oct",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linklin830912/portfolio_22_Oct.git"
+  },
+  "author": "link",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linklin830912/portfolio_22_Oct/issues"
+  },
+  "homepage": "https://github.com/linklin830912/portfolio_22_Oct#readme"
+}
