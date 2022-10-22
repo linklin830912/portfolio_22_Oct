@@ -1,0 +1,161 @@
+<div class="include_div" id="bio0_div">  
+    <h3 class="general_tittle">about</h1>
+        <input id="init_input" hidden>   
+    <div id="context_div">
+        <div id="portrait_div">
+            <img class="portrait_img" id="portrait_img0" src="./html/picture/portrait0.png">
+            <img class="portrait_img" id="portrait_img1" src="./html/picture/portrait1.png">
+            <img class="portrait_img" id="portrait_img2" src="./html/picture/portrait2.png">
+        </div>
+        <div id="moto_div">
+            <h2 class="general_h2" id="moto0_h">Hi, I am Link Lin.</h2>
+            <div class="quote_div" id="quote0_div">
+                <h3 class="quote_h3" id="moto1_h">I know it might waive away some people</h3>
+                <h3 class="quote_h3" id="moto2_h">But I'm proud to say...</h3>
+            </div>
+            <div class="quote_div" id="quote0_div_shadow">
+                <h3 class="quote_h3" id="moto1_h_shadow">I know it might waive away some people</h3>
+                <h3 class="quote_h3" id="moto2_h_shadow">But I'm proud to say...</h3>
+            </div>
+            
+            <h2 class="general_h2" id="moto3_h">I am a</h2>
+            <div id="header_div">
+                <h1 class="general_h1" id="moto4_h">developer</h1>
+                <h2 class="general_h2" id="moto5_h">&&</h2>
+                <h1 class="general_h1" id="moto6_h">designer </h1>
+                <h1 class="general_h1" id="moto7_6_shadow">designer </h1>
+            </div>            
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/bio0.js"></script>
+    
+    <style type="text/css">
+        #context_div{ 
+            display: grid;
+            grid-template-columns:  auto 1fr auto ;
+            grid-row: 1fr var(--portrait_height) 1fr;
+            width: 100%;
+            height: var(--page_hight0);
+        }
+        #moto_div {
+            grid-column: 2;
+            grid-row: 2;
+
+            display: grid;
+            max-width: 400pt;
+            height: 400pt;
+            grid-template-columns: auto auto;
+            grid-template-rows: 1fr auto auto auto auto 1fr;
+        }
+        .general_h1 {
+            font-family: var(--font_family0);
+            font-size: var(--general_h1_font_size);
+            color: var(--main_color0);
+            
+        }        
+        .general_h2 {
+            font-family: var(--font_family0);
+            font-size: var(--general_h2_font_size);
+            color: var(--main_color0);
+            
+        }
+        .quote_div{
+            grid-column: 1;
+            grid-row: 3;
+            padding-left: 40%;
+
+            display: block;
+            justify-content: right;
+        }
+        .quote_h3 {        
+            text-align: center;
+            width: fit-content;
+        
+            border-radius: var( --quote_radius);
+            padding: var(--quote_padding);
+            margin: 1pt;
+            font-family: var(--font_family0);
+            font-size: var(--general_h3_font_size);
+            background-color: var(--main_color0);
+            color: var(--backgroud_color0);       
+        }
+        
+        #quote0_div {
+            z-index: -5;
+        }
+        #quote0_div_shadow {
+            position: relative;
+        }
+        #quote0_div_shadow h3 {
+            z-index: 2;
+            opacity: 0.5;
+        }
+        #moto2_h_shadow,  #moto2_h{           
+            margin-left: 40%;
+        }
+        
+        #moto0_h{           
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+
+        #moto3_h{           
+            grid-column: 1;
+            grid-row: 4;
+        }
+        #header_div{
+            grid-column: 1;
+            grid-row: 5;
+
+            display: grid;
+            grid-template-columns: 250pt auto;
+            grid-template-rows: auto auto auto;
+        }
+        #moto4_h {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        #moto5_h {
+            grid-column: 2;
+            grid-row: 2;
+            text-align: left;
+        }
+        #moto6_h {
+            grid-column: 2;
+            grid-row: 3;
+            text-align: left;
+            z-index: -1;
+        }
+        #moto7_6_shadow {
+            grid-column: 2;
+            grid-row: 3;
+            text-align: left;
+            opacity: 0.5;
+            z-index: 2;
+        }
+
+        #portrait_div {
+            grid-column: 3;
+            grid-row: 2;
+
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            margin: 0 50pt 0 0;
+        }
+        .portrait_img {
+            height: var(--portrait_height);
+            grid-row: 1;     
+            grid-column: 1;
+            border-radius: 20pt;
+            opacity: 0;
+        }  
+        #portrait_img0 {
+            opacity: 1;
+        }  
+       
+    </style>
+
+</div>

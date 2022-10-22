@@ -1,0 +1,63 @@
+#main_div {
+    position: absolute;
+    margin-left: 20vw;
+    background-color: var(--backgroud_color0);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+#content_div{
+    display: grid;
+    position: relative;
+    height: var(--page_hight0);
+    grid-template-columns: auto auto;
+    box-shadow: 10pt 10pt 30pt var(--main_color1);
+    
+}
+.page_div {
+    display: inline-flex;
+    position: relative;
+    align-items: center;    
+    z-index: 2;
+    overflow: hidden;    
+}
+#page0_div {    
+    justify-content: left;
+}
+#page1_div {
+    justify-content: right;
+}
+.page_img {
+    position: absolute;
+    height: 100%;
+    z-index: 3;
+
+    opacity: 0.5;
+
+}
+.page_button {
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0;
+}
+#page0_button {
+    background: linear-gradient( 270deg, var(--main_color1) 0.0%, transparent 10%, transparent 90%, var(--main_color2) 100%);
+}
+#page1_button {
+    background: linear-gradient( 90deg, var(--main_color1) 0.0%, transparent 10%, transparent 90%, var(--main_color2) 100%);
+}
+
+#slide_div{
+    position: absolute;
+    width: var(--page_width0);
+    left: 0;
+    top: 0
+}
+#page2_div {
+    position: relative;
+    width: var(--page_width0);
+    height: var(--page_hight0);
+    box-shadow: 10pt 10pt 30pt var(--main_color1); 
+}

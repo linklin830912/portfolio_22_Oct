@@ -1,0 +1,69 @@
+.menu_h3 {
+    color: var(--main_color0);
+    font-size: 12pt;
+    font-weight: lighter;
+    font-family: var(--font_family1);
+    font-style: italic;
+    padding: 0 0 5pt 10pt;
+    margin-left: 35pt;
+}
+
+.select_button {
+    border-radius: 18pt;    
+    box-shadow: 5px 5px 5px var(--main_color1);
+    background: var(--backgroud_color1);    
+    padding: 0 15pt 0 20pt;
+    margin: 0 0 0 35pt;
+    text-align: left;
+    height: 36pt;
+}
+.select_button h2 {
+    display: inline;
+    color: var(--main_color0);
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: var(--font_family0);
+}
+.select_button h1 {
+    display: inline;
+    margin-right: 10pt;  
+    padding-left: var(--eye_diameter);
+    height: var(--eye_diameter);
+    border-radius: var(--eye_radiaus);  
+    background-color: var(--main_color1);
+}
+
+#menu_div {
+    z-index: 7;
+    display: fixed;
+    width: 0pt; /* this make main_div to be fixed*/
+}
+
+.menu_container_div {
+    margin-top: 30pt;
+}
+
+.pointer_canvas {
+    position: absolute;    
+    left: 40pt;
+    width: var(--eye_diameter);
+    height: var(--eye_diameter);
+    border-radius: var(--eye_radiaus);  
+}
+#eye_canvas {
+    background-color: var(--main_color0);
+    z-index: 5;
+}
+#lead_canvas {
+    background-color: var(--backgroud_color0);
+    border-radius: 0 0 10pt 10pt;
+    z-index: 7;
+}
+#side_canvas {
+    background-color: transparent;
+    outline: var(--backgroud_color0) 20px solid;
+    z-index: 6;
+}
+
+
+

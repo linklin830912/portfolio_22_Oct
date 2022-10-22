@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./style.css"> 
+    <link rel="stylesheet" type="text/css" href="./menuStyle.css">  
+    <link rel="stylesheet" type="text/css" href="./mainStyle.css"> 
+</head>
+<body>
+    <div class="background_div">
+
+        <canvas class="pointer_canvas" id="eye_canvas"></canvas>     
+        <canvas class="pointer_canvas" id="lead_canvas"></canvas>
+        <canvas class="pointer_canvas" id="side_canvas"></canvas>
+        <input class="value_input" id="eye_input" value="">
+        <input class="value_input" id="page_input" value="">     
+
+        <div class="section_div" id="menu_div">
+            <div class="menu_container_div" id="about_div">
+                <h3 class="menu_h3">about</h3>
+                <button class="select_button" id="about0_button" value="html_bio_0_1"><h1></h1><h2>about</h2></button>
+                <button class="select_button" id="about1_button" value="html_experience_0_1"><h1></h1><h2>experience</h2></button>
+                <button class="select_button" id="about2_button" value="html_education_0_0"><h1></h1><h2>education</h2></button>
+            </div>
+            <div class="menu_container_div" id="portfolio_div">
+                <h3 class="menu_h3">portfolio</h3>
+                <button class="select_button" id="portfolio0_button" value="html_robotic_0_3"><h1></h1><h2>robotic</h2></button>
+                <button class="select_button" id="portfolio1_button" value="image_thesis_0_10"><h1></h1><h2>thesis</h2></button>
+                <button class="select_button" id="portfolio2_button" value="image_material_1_4"><h1></h1><h2>material</h2></button>
+            </div>         
+        </div>
+        <div class="section_div" id="main_div">    
+            <div id="slide_div">
+                <div id="page2_div">
+                    
+                </div>
+            </div>   
+            <div id="content_div">                
+                <div class="page_div" id="page0_div">
+                    <img class="page_img" id="page0_img">
+                    <button class="page_button" id="page0_button"></button>                  
+                </div>
+                <div class="page_div" id="page1_div">
+                    <img class="page_img" id="page1_img">
+                    <button class="page_button" id="page1_button"></button>
+                </div>
+            </div>          
+        </div>        
+    </div>
+    <script type="module" defer src="./js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

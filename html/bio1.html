@@ -1,0 +1,104 @@
+<div class="include_div" id="bio1_div">  
+    <h3 class="general_tittle">about</h1>
+        <input id="init_input" hidden>   
+    <div id="context_div">
+        <div id="portrait_div">
+            <img class="portrait_img" id="portrait_img3" src="./html/picture/portrait2.png">
+            <img class="portrait_img" id="portrait_img4" src="./html/picture/portrait3.png">
+            <img class="portrait_img" id="portrait_img5" src="./html/picture/portrait4.png">
+            <img class="portrait_img" id="portrait_img6" src="./html/picture/portrait5.png">
+            <img class="portrait_img" id="portrait_img7" src="./html/picture/portrait6.png">
+            <img class="portrait_img" id="portrait_img8" src="./html/picture/portrait7.png">
+        </div>
+        <div id="moto_div">
+            <div class="quote_div" id="quote0_div">
+                <h2 class="general_h2" id="moto0_h">I build<span class="quote_h2">digital tools</span></h2>
+                <h2 class="general_h2" id="moto1_h">for design development</h2>
+            </div>
+            <div class="quote_div" id="quote1_div">
+                <h2 class="general_h2" id="moto2_h">I believe...</h2>
+                <h2 class="general_h2" id="moto3_h"><span class="quote_h2">technology</span>is the tool</h2>
+                <h2 class="general_h2" id="moto4_h">that makes<span class="quote_h2">creativity</span></h2>
+                <h2 class="general_h2" id="moto5_h">come to live</h2>
+            </div>            
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/bio1.js"></script>
+    
+    <style type="text/css">
+        #context_div{ 
+            display: grid;
+            grid-template-columns: auto 1fr auto ;
+            grid-row: 1fr var(--portrait_height) 1fr;
+            width: 100%;
+            height: var(--page_hight0);
+        }
+        #moto_div {
+            grid-column: 1;
+            grid-row: 2;
+
+            display: grid;
+            grid-template-rows: 1fr auto 1fr auto 1fr;
+            height: var(--portrait_height);
+
+            font-family: var(--font_family0);
+            font-size: var(--general_h1_font_size);
+        }    
+        .general_h2 {         
+            font-family: var(--font_family0);
+            font-size: var(--general_h2_font_size);
+            color: var(--main_color0); 
+            margin: 11pt 0 11pt 0; 
+        }
+        .quote_div {
+            position: relative;
+        }
+        #quote0_div{
+            grid-column: 1;
+            grid-row: 2;
+        }
+        #quote1_div{
+            grid-column: 1;
+            grid-row: 4;
+        }
+        .quote_h2 {
+            background-color: var(--main_color0);
+            color: var(--backgroud_color0);
+            border-radius: var( --quote_radius);
+            padding: var(--quote_padding);
+        }
+        #moto5_h, #moto1_h{
+            position: relative;
+            text-align: end;
+            right: -100pt;
+        }
+
+        #portrait_div {
+            grid-column: 3;
+            grid-row: 2;
+            
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            position: relative;
+            margin: 0 50pt 0 0;
+            height: var(--portrait_height);
+            overflow: hidden;
+        }
+        .portrait_img {
+            height: var(--portrait_height);
+            grid-row: 1;     
+            grid-column: 1;
+            border-radius: 20pt;
+            position: relative;
+            
+        }
+        #portrait_img8 {
+            position: absolute;
+            top: 150pt;
+        }
+       
+    </style>
+
+</div>

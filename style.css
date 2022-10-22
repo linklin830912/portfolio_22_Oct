@@ -1,0 +1,60 @@
+:root {
+    --main_color0: rgb(50, 50, 50);
+    --main_color1: rgba(120, 120, 120, 0.5);
+    --main_color2: rgba(150, 150, 150, 0.1);
+
+    --backgroud_color0: rgb(255, 255, 255);
+    --backgroud_color1: rgba(220, 220, 220, 0.5);
+
+    --opacity0: 0.2;
+    --opacity1: 0.5;
+    --opacity2: 0.7;
+    --opacity3: 1.0;
+
+    --page_hight0: 92vh;
+    --page_width0: 100%;
+
+    --font_family0: Consolas;
+    --font_family1: 'Courier New';
+
+    --eye_diameter: 20pt;
+    --eye_radiaus: 10pt;
+
+    --portrait_height: 400pt;
+    --general_h1_font_size: 60pt;
+    --general_h2_font_size: 26pt;
+    --general_h3_font_size: 16pt;
+    --general_h3_font_size: 12pt;
+
+    --quote_padding: 5pt 15pt 5pt 15pt;
+    --quote_radius: 12pt;
+  }
+
+* {
+    margin: 0pt;
+    padding: 0pt;
+}
+button {
+    border: 0pt;
+    background-color: transparent;
+}
+.background_div {
+    width: 100vw;
+    height: 100vh;
+    display: inline-flex;
+    align-items: center;
+    pointer-events: visible;
+    background-color: transparent;
+}
+.value_input{
+    display: none;
+}
+.general_tittle {
+    position: absolute;
+    margin: 10pt;
+    font-family: var(--font_family1);
+    font-size: 12pt;
+    font-weight: 100;
+    font-style: italic;
+}
+
