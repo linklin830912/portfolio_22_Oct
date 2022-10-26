@@ -13,12 +13,6 @@ var displayChartIndex = 0;
 var displaywidth = 800;
 var displayend = -3200;
 
-
-var canvasWidth = replaceUnit($(".form_skill_canvas").attr("width"));
-var canvasheight = replaceUnit($(".form_skill_canvas").attr("height"));
-var lineWidth0 = 1;
-var lineWidth1 = 0.5;
-var lineWidth2 = 0.3;
 var main_color0 = $(":root").css("--main_color0");
 var main_color1 = $(":root").css("--main_color1");
 var main_color2 = $(":root").css("--main_color2");
@@ -29,7 +23,7 @@ var unitRadias = 42;
 drawIndicateCanvas();
 createChart();
 mouseMoveBlockChange();
-createSkillGraph();
+createSkillListhtml();
 
 function createChart(){
 
@@ -93,10 +87,7 @@ function mouseMoveBlockChange(){
 
         chart_element_div.on('mouseenter', mouseEnterEvent);
         chart_element_div.on('mouseleave', mouseLeaveEvent);
-      
     });
-
-
 }
         
 
@@ -193,141 +184,6 @@ function mouseLeaveAnimate(block, guideline, point, caption){
     }, secfast , dy_mode);
 }
 
-function createSkillGraph(){
-    let collectskillData = collectSkillData();
-    let form_skill_div = $(".form_skill_div");
-
-    form_skill_div.each((index, element) => {
-
-        let id = $(element).attr("id");
-        let value = $(element).attr("value");
-        let skilllist = "#form_skilllist"+index+"_div";
-        createSkillListhtml(skilllist, value);
-
-        let canvas = $("#"+id+" .form_skill_canvas")[0];       
-        var ctx = canvas.getContext('2d');
-
-        if (canvas.getContext) {
-            let marginY = 30;
-            let marginX = (canvasWidth-canvasheight)*0.5+marginY;
-            
-            let centerX = canvasWidth*0.5;
-            let centerY = canvasheight*0.5;
-            let maxRadias = canvasheight*0.5-marginY;
-
-            ctx.lineWidth = lineWidth1;
-            // horizontal line
-            
-            ctx.moveTo(marginX, centerY);
-            ctx.lineTo(marginX+maxRadias*2, centerY);
-            drawSkillGraphArrow(ctx, marginX+maxRadias*2, centerY, marginX, centerY);
-            // vertical line
-            ctx.moveTo(centerX, marginY);
-            ctx.lineTo(centerX, marginY+maxRadias*2);
-            drawSkillGraphArrow(ctx, centerX, marginY, centerX, marginY+maxRadias*2);
-            ctx.stroke();
-            
-            // circle
-            ctx.moveTo(centerX, centerY);
-            ctx.lineWidth = lineWidth2;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, unitRadias*3, 0, Math.PI * 2, true);
-            ctx.fillStyle = main_color1
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, unitRadias*2, 0, Math.PI * 2, true);
-            ctx.fillStyle = main_color1
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, unitRadias*1, 0, Math.PI * 2, true);            
-            ctx.fillStyle = main_color1
-            ctx.fill();
-
-            //geo
-            //new skill
-            let selectskillData = selectSkillData(index);
-            let pts = getAllPoints(collectskillData, selectskillData);
-
-            ctx.beginPath();
-            pts.forEach((pt) => {
-                ctx.moveTo(centerX+pt.x, centerY-pt.y);
-                ctx.arc(centerX+pt.x, centerY-pt.y, 4, 0, Math.PI * 2, true);
-                ctx.fillStyle = main_color0;
-                ctx.fill();
-                ctx.moveTo(centerX+pt.x, centerY-pt.y);
-                ctx.lineTo(centerX, centerY);
-                ctx.strokeStyle = main_color0;
-                ctx.stroke();
-            });
-            //old skill
-            selectskillData = selectSkillData(index+1);
-            pts = getAllPoints(collectskillData, selectskillData);
-
-            ctx.beginPath();
-            pts.forEach((pt) => {
-                ctx.moveTo(centerX+pt.x, centerY-pt.y);
-                ctx.arc(centerX+pt.x, centerY-pt.y, 4, 0, Math.PI * 2, true);
-                ctx.fillStyle = background_color0;
-                ctx.fill();
-                ctx.moveTo(centerX+pt.x, centerY-pt.y);
-                ctx.lineTo(centerX, centerY);
-                ctx.strokeStyle = background_color0;
-                ctx.stroke();
-            });
-
-            //text 
-            ctx.save();
-            let pt = [15, centerY+5]      
-            ctx.translate(pt[0], pt[1]);
-            ctx.rotate((Math.PI / 180) * -65);
-            ctx.translate(-1*pt[0], -1*pt[1]);
-            ctx.font = "12pt " +  $(":root").css("--font_family0");
-            ctx.fillStyle = main_color0
-            ctx.fillText('design', pt[0], pt[1]);
-            ctx.restore();
-
-            ctx.save();   
-            pt = [centerX+maxRadias+15, centerY+5]          
-            ctx.translate(pt[0], pt[1]);
-            ctx.rotate((Math.PI / 180) * -65);
-            ctx.translate(-pt[0], -pt[1]);
-            ctx.font = "12pt " +  $(":root").css("--font_family0");
-            ctx.fillStyle = main_color0
-            ctx.fillText('tech', pt[0], pt[1]);
-            ctx.restore();
-
-            ctx.save();    
-            pt = [centerX-10, marginY+10]         
-            ctx.translate(pt[0], pt[1]);
-            ctx.rotate((Math.PI / 180) * -65);
-            ctx.translate(-pt[0], -pt[1]);
-            ctx.font = "12pt " +  $(":root").css("--font_family0");
-            ctx.fillStyle = main_color0
-            ctx.fillText('hard', pt[0], pt[1]);
-            ctx.restore();
-
-            ctx.save();   
-            pt = [centerX+10, centerY+maxRadias+5]         
-            ctx.translate(pt[0], pt[1]);
-            ctx.rotate((Math.PI / 180) * -65);
-            ctx.translate(-pt[0], -pt[1]);
-            ctx.font = "12pt " +  $(":root").css("--font_family0");
-            ctx.fillStyle = main_color0
-            ctx.fillText('soft', pt[0], pt[1]);
-            ctx.restore();
-
-            ctx.save();   
-            pt = [centerX+18, centerY+maxRadias+25]         
-            ctx.translate(pt[0], pt[1]);
-            ctx.rotate((Math.PI / 180) * -65);
-            ctx.translate(-pt[0], -pt[1]);
-            ctx.font = "12pt " +  $(":root").css("--font_family0");
-            ctx.fillStyle = main_color0
-            ctx.fillText('skill', pt[0], pt[1]);
-            ctx.restore();
-        }
-    });    
-}
 function drawSkillGraphArrow(cx, p0x, p0y, p1x, p1y){
     let lnth = Math.sqrt((p0x - p1x)*(p0x - p1x)+(p0y - p1y)*(p0y - p1y))*0.1;
     let vv = [(p0x - p1x)/lnth, (p0y - p1y)/lnth];
@@ -436,13 +292,15 @@ function getAllPoints(collectResult, selectResult){
 
     return pts;
 }
-function createSkillListhtml(skilllst, val){
-    let data = val.split(",");
-    data = new Set(data);
+function createSkillListhtml(){
 
-    data.forEach(item => {
-        let result = item.split('/');
-        $(skilllst).append("<div>"+result[0]+"</div>");
+    $(".form_skilllist_div").each((index,element) => {
+
+        let value = $(element).attr("value");
+        let data = value.split(",");
+        data.forEach(item => {
+            $(element).append("<div>"+item+"</div>");
+        });
     });
 }
 
@@ -450,15 +308,15 @@ function drawIndicateCanvas(){
     //point to button robot
     $(".indicate_div").html('');
     $(".indicate_div").html('<canvas class="indicate_canvas" width="500" height="1000"></canvas>');
-
-    let canvas = $(".indicate_canvas")[0];
-    let ctx = canvas.getContext('2d');    
-
-    let targetButton = $("#portfolio0_button");
+    let canvas = $(".indicate_canvas")[0]; 
+    let ctx = canvas.getContext('2d');
+    
+    let targetButton1 = $("#portfolio1_button");
+    let targetButton2 = $("#portfolio2_button");
     let page = $("#page0_button");
     
-    let targetButtonWidth = targetButton.outerWidth(true);
-    let targetButtonPosition =targetButton.offset();
+    let targetButtonWidth = targetButton1.outerWidth(true);
+    let targetButtonPosition =targetButton1.offset();
     let targetButtonTop = targetButtonPosition.top;
     let targetButtonLeft = targetButtonPosition.left;
 
@@ -466,11 +324,11 @@ function drawIndicateCanvas(){
     let targetPageTop = targetPagePosition.top;
     let targetPageLeft = targetPagePosition.left;
     
-    let stPt = [targetButtonLeft+targetButtonWidth*0.9,targetButtonTop+30];
-    let pt0 = [stPt[0]+70,stPt[1]-50];      
+    let stPt = [targetButtonLeft+targetButtonWidth*0.9,targetButtonTop+20];
+    let pt0 = [stPt[0]+70,stPt[1]-90];      
     let endPt = [targetPageLeft-10,targetPageTop+200];
-    let pt1 = [endPt[0]-120,endPt[1]+50];
-
+    let pt1 = [endPt[0]-120,endPt[1]+150];
+    
     let vec0 = createVector(20, 25);
     let vec1 = createVector(70, 50);
     let vec2 = createVector(150, 50);
@@ -481,14 +339,39 @@ function drawIndicateCanvas(){
     ctx.bezierCurveTo(pt0[0]+vec1.x, pt0[1]+vec1.y, pt1[0]-vec2.x, pt1[1]-vec2.y, pt1[0], pt1[1]);
     ctx.bezierCurveTo(pt1[0]+vec2.x, pt1[1]+vec2.y, endPt[0]+vec3.x,endPt[1]+vec3.y, endPt[0], endPt[1]);
 
-    let vec4 = createVector(45, 30);
-    let vec5 = createVector(340, 30);
+    vec3 = createVector(70, 20);
+    vec4 = createVector(0, 20);
 
-
+    ctx.moveTo(stPt[0], stPt[1]);
+    ctx.lineTo(stPt[0]+vec3.x, stPt[1]+vec3.y);
     ctx.moveTo(stPt[0], stPt[1]);
     ctx.lineTo(stPt[0]+vec4.x, stPt[1]+vec4.y);
+
+
+    targetButtonWidth = targetButton2.outerWidth(true);
+    targetButtonPosition =targetButton2.offset();
+    targetButtonTop = targetButtonPosition.top;
+    targetButtonLeft = targetButtonPosition.left;
+
+    stPt = [targetButtonLeft+targetButtonWidth*0.9,targetButtonTop+20];
+    endPt = pt0;
+    pt0 = [stPt[0]+50, endPt[1]+100];
+
+    vec0 = createVector(20, 25);
+    vec1 = createVector(70, 50);
+    vec2 = createVector(120, 50);
+    
+    ctx.moveTo(stPt[0],stPt[1]);
+    ctx.bezierCurveTo(stPt[0]+vec0.x,stPt[1]+vec0.y,pt0[0]-vec1.x, pt0[1]-vec1.y, pt0[0], pt0[1]);
+    ctx.bezierCurveTo(pt0[0]+vec1.x, pt0[1]+vec1.y, endPt[0]-vec2.x, endPt[1]-vec2.y, endPt[0], endPt[1]);
+
+    vec3 = createVector(50, 20);
+    vec4 = createVector(340, 20);
+
     ctx.moveTo(stPt[0], stPt[1]);
-    ctx.lineTo(stPt[0]+vec5.x, stPt[1]+vec5.y);
+    ctx.lineTo(stPt[0]+vec3.x, stPt[1]+vec3.y);
+    ctx.moveTo(stPt[0], stPt[1]);
+    ctx.lineTo(stPt[0]+vec4.x, stPt[1]+vec4.y);
 
     ctx.setLineDash([8, 3]);
     ctx.lineWidth = 0.5;
@@ -497,13 +380,13 @@ function drawIndicateCanvas(){
 
     //text 
     ctx.save();
-    ctx.moveTo(pt1[0],pt1[1]);
-    ctx.translate(pt1[0],pt1[1]);
-    ctx.rotate((Math.PI/180)*(160+180));
-    ctx.translate(-pt1[0],-pt1[1]);
+    ctx.moveTo(pt1[0], pt1[1]);
+    ctx.translate(pt1[0], pt1[1]);
+    ctx.rotate((Math.PI / 180)*(180-120));
+    ctx.translate(-pt1[0], -pt1[1]);
     ctx.font = "16pt " +  $(":root").css("--font_family0");
     ctx.fillStyle = main_color0
-    ctx.fillText('click', pt1[0]+30, pt1[1]-35);
+    ctx.fillText('click', pt1[0]+80, pt1[1]-45);
     ctx.restore();
 
     $(".indicate_canvas").animate({
@@ -519,6 +402,7 @@ function drawIndicateCanvas(){
         "opacity": 0,
         "z-index":-10000
     }, 100 , dy_mode);
+
 }
 function replaceUnit(value){
     return parseInt(value.replace('px',''));

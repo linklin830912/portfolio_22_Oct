@@ -166,7 +166,7 @@ function mouseClickPage(){
         }
     }else{
         //former page
-        let defaultPage = getDefaultPage(result.next_page);
+        let defaultPage = getDefaultPage(result.former_page);
         if(defaultPage!=null){
             $("#"+defaultPage).click();
         }else{     

@@ -66,4 +66,13 @@
 }
 
 
-
+.indicate_canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.indicate_div{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
