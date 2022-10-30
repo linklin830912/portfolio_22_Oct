@@ -1,38 +1,32 @@
 <div class="include_div" id="about_button_0_div">
     <h3 class="general_tittle">_from_work</h1>
     <div id="context_div">
-        <div id="uiux_div">
-            <img class="uiux_img" id="uiux0_img" src="./html/picture/uiux0.png">
-            <img class="uiux_img" id="uiux1_img" src="./html/picture/uiux1.png">
+        <div id="robotic_div">
+            <video class="robotic_video" id="robotic0_video" src="./html/video/cut.mp4" type="video/mp4" autoplay muted></video>
+            <video class="robotic_video" id="robotic0_video" src="./html/video/slot.mp4" type="video/mp4" autoplay muted></video>
+            <video class="robotic_video" id="robotic0_video" src="./html/video/drill.mp4" type="video/mp4" autoplay muted></video>
         </div>        
     </div>
 
     <script type="text/javascript" src="js/robotic0.js"></script>
 
     <style type="text/css">
-        h1 {
-            color: var(--main_color1);
-        }
-        #context_div {
+        #context_div{
+            display: grid;
             width: 100%;
             height: var(--page_hight0);
-
-            display: grid;
             grid-template-columns: 1fr auto 1fr;
             grid-template-rows: 1fr auto 1fr;
         }
-        #uiux_div {            
-            grid-column: 2;
-            grid-row: 2;
-
-            display: grid;
-        }
-        .uiux_img {
-            grid-column: 1;
-            grid-row: 1;
-
-            width: 850pt;
-        }
+       #robotic_div {
+        grid-column: 2;
+        grid-row: 2;
+        display: flexbox;
+       }
+       .robotic_video {
+        max-width: 500pt;
+        max-height: 250pt;
+       }
 
     </style>
 </div>
