@@ -2,9 +2,9 @@
     <h3 class="general_tittle">_from_work</h1>
     <div id="context_div">
         <div id="robotic_div">
-            <video class="robotic_video" id="robotic0_video" src="./html/video/cut.mp4" type="video/mp4" autoplay muted></video>
-            <video class="robotic_video" id="robotic0_video" src="./html/video/slot.mp4" type="video/mp4" autoplay muted></video>
-            <video class="robotic_video" id="robotic0_video" src="./html/video/drill.mp4" type="video/mp4" autoplay muted></video>
+            <video class="robotic_video" id="robotic0_video" src="./html/video/cut.mp4" type="video/mp4" muted></video>
+            <video class="robotic_video" id="robotic1_video" src="./html/video/slot.mp4" type="video/mp4" muted></video>
+            <video class="robotic_video" id="robotic2_video" src="./html/video/drill.mp4" type="video/mp4" muted></video>
         </div>        
     </div>
 
@@ -22,10 +22,12 @@
         grid-column: 2;
         grid-row: 2;
         display: flexbox;
+        z-index: 100000;
        }
        .robotic_video {
         max-width: 500pt;
         max-height: 250pt;
+        z-index: 100001;
        }
 
     </style>
