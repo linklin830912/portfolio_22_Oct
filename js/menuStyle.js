@@ -12,6 +12,10 @@ export function getMouseOverMenu(){
     $(".select_button").on("mouseleave", mouseLeaveMenu);    
 }
 export let onPage;
+export function getMouseOverContact(){
+    $(".contact_div").on("mouseover", mouseOverContact);
+    $(".contact_div").on("mouseleave", mouseLeaveContact);
+}
 
 
 
@@ -211,4 +215,16 @@ function eyeNotWatch(){
 }
 
 
-
+//mouse over contact
+function mouseOverContact(){
+   $("#roll_div").animate({width: "250pt"});
+   $("#rollcontent_div").animate({height: "70pt"});
+   $("#rollcontent_div h3").css("display", "block");
+   $("#rollcontent_div").css("padding", "30pt 0 30pt 0");
+}
+function mouseLeaveContact(){
+    $("#roll_div").animate({width: "120pt"});
+    $("#rollcontent_div").animate({height: "0pt"});
+    $("#rollcontent_div h3").css("display", "none");
+    $("#rollcontent_div").css("padding", "0 0 0 0");
+ }

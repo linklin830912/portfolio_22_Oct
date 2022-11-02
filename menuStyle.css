@@ -8,6 +8,7 @@
     margin-left: 35pt;
 }
 
+
 .select_button {
     border-radius: 18pt;    
     box-shadow: 5px 5px 5px var(--main_color1);
@@ -85,34 +86,82 @@
 }
 #roll_div{
     display: grid;
-    width: 200pt;
-    grid-template-rows: auto 0pt auto;
+    width: 120pt;
+    grid-template-columns: 15pt 1fr;
+    grid-template-rows: auto auto auto;
     box-shadow: 5px 5px 5px var(--main_color1);
-    border-radius: 15pt; 
+    border-radius: 10pt; 
+}
+#roll_div button{
+    grid-column: 1 / span 2;
+
+    border-radius: 10pt; 
+    height: 20pt;
+    padding: 0 15pt 0 15pt;
+    background: var(--backgroud_color2); 
 }
 #roll0_button{
     grid-row: 1;
 
-    border-radius: 15pt;    
-    background: var(--backgroud_color1);    
-    padding: 0 25pt 0 25pt;
+    box-shadow: 5px 5px 5px var(--main_color1);     
     text-align: left;
-    height: 30pt;
 }
-#roll0_button h2{
-    display: inline;
+.roll_button h2{
     color: var(--main_color0);
-    font-size: 16pt;
-    font-weight: bold;
+    font-size: 12pt;
     font-family: var(--font_family0);
 }
 #rollcontent_div {
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    border-radius: 15pt;  
+    background-color: var(--backgroud_color1);
+
+    overflow: hidden;
+    padding: 0;
+    z-index: -2;
 }
-#roll2_button{
+#rollcontent_div h3{
+    display: none;
+    padding: 0 0 0 0;
+}
+#roll2_button{    
     grid-row: 3;
-    border-radius: 15pt;    
     
-    background: var(--backgroud_color1);    
-    height: 30pt;
+    box-shadow: 0px -3px 15px var(--main_color1);
+    text-align: right;
+    z-index: -1;
+}
+
+.contact_h3{
+    color: var(--main_color0);
+    font-size: 10pt;
+    font-weight: lighter;
+    font-family: var(--font_family1);
+    font-style: italic;
+    position: relative;
+    margin: 5pt;
+}
+.contact_h2{
+    color: var(--main_color0);
+    font-size: 12pt;
+    font-weight: normal;
+    font-family: var(--font_family0);
+    font-style: italic;
+}
+.copy_button {
+    color: var(--main_color0);
+    box-shadow: 0px -3px 15px var(--main_color1);
+    
+    border-radius: 5pt;
+    border: 1.5pt solid var(--main_color0);
+    height: 12pt;
+    
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: var(--font_family0);
+    position: relative;
+    left: 5pt;
+    opacity: 0.7;
+    z-index: 1000000000000000;
 }

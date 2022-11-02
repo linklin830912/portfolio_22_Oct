@@ -1,4 +1,4 @@
-import { getMouseClickMenu, getMouseMove, getMouseOverMenu } from "./menuStyle.js";
+import { getMouseClickMenu, getMouseMove, getMouseOverMenu, getMouseOverContact} from "./menuStyle.js";
 import { getPageSetups, getMouseHover, getPageInputChange, getMouseClickPage } from "./mainStyle.js";
 import {getSetupPageList} from "./pageHelper.js"
 
@@ -13,8 +13,10 @@ $(document).ready(function(){
     getMouseClickMenu();
     getMouseMove();
     getMouseOverMenu();
+    getMouseOverContact();
 
     getMouseClickPage();
+    
 
     
     $("#about0_button").click();
