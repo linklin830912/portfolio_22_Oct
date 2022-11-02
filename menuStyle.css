@@ -80,19 +80,39 @@
 
 .contact_div{
     position: fixed;
+    margin: 0 0 0 35pt;
     top: 30pt;
-    
 }
-#contact_button{
-    width: auto;
-    height: auto;
-
+#roll_div{
     display: grid;
-    grid-template-columns: 30pt auto 30pt;
-    grid-template-rows: 30pt auto 30pt;
+    width: 200pt;
+    grid-template-rows: auto 0pt auto;
+    box-shadow: 5px 5px 5px var(--main_color1);
+    border-radius: 15pt; 
 }
-#contact_button h2{
-    grid-column: 2;
+#roll0_button{
+    grid-row: 1;
+
+    border-radius: 15pt;    
+    background: var(--backgroud_color1);    
+    padding: 0 25pt 0 25pt;
+    text-align: left;
+    height: 30pt;
+}
+#roll0_button h2{
+    display: inline;
+    color: var(--main_color0);
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: var(--font_family0);
+}
+#rollcontent_div {
     grid-row: 2;
-    margin: 0;
+}
+#roll2_button{
+    grid-row: 3;
+    border-radius: 15pt;    
+    
+    background: var(--backgroud_color1);    
+    height: 30pt;
 }
