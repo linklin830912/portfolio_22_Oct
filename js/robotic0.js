@@ -60,3 +60,8 @@ function miniMouseMove(){
     canvas.css("top", event.clientY-rect.top);
     
 }
+function updateTimer(){
+    setInterval(() => {
+        
+    }, interval);
+}
