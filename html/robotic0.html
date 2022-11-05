@@ -1,8 +1,15 @@
 <div class="include_div" id="about_button_0_div">
     <h3 class="general_tittle">_from_work</h1>
     <div id="context_div">
-        <div id="info_div"><a href="https://www.linkedin.com/company/roboticplus/" target="_blank"><img src="./html/picture/linkedin_icon.png"></a>                        
-            <a href="https://www.roboticplus.com/" target="_blank"><img src="./html/picture/info_icon.png"></a>
+        <div id="info_div">
+            <div id="infotext_div">
+                <h3>Timber project from RoboticPlus, 11.2020-02.2021</h3>
+                <h3>Metal cutting UIUX project for client and Industrial Seminar, Shanghai, 02.2021-05.2022</h3>
+            </div>
+            <div id="infoa_div">
+                <a href="https://www.linkedin.com/company/roboticplus/" target="_blank"><img src="./html/picture/linkedin_icon.png"></a>                        
+                <a href="https://www.roboticplus.com/" target="_blank"><img src="./html/picture/info_icon.png"></a>
+            </div>    
         </div>
 
         <div id="robotic_div">
@@ -15,13 +22,11 @@
             <div class="screen_div" id="screen0_div">
                 <div class="bulb_div" id="bulb0_div"><div></div></div>
                 <img class="ui_img" id="ui0_img" src="./html/picture/pad_gif.gif">
-                <!-- <canvas class="ui_canvas" id="ui0_canvas" width="270" height="190"></canvas> -->
                 <canvas class="ui_canvas" id="ui0_canvas"></canvas>
             </div>
             <div class="screen_div" id="screen1_div">
                 <div class="bulb_div" id="bulb1_div"><div></div></div>
                 <img class="ui_img" id="ui1_img" src="./html/picture/ui_gif.gif">
-                <!-- <canvas class="vaui_cans" id="ui1_canvas" width="456" height="271"></canvas> -->
                 <canvas class="ui_canvas" id="ui1_canvas"></canvas>
             </div>
         </div>     
@@ -44,14 +49,29 @@
             grid-column: 2;
             grid-row: 1;
             position: relative;
-            display: inline-block;
-            /* background-color: aqua; */
+
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            grid-template-rows: 1fr auto ;
+        }
+        #infotext_div{
+            grid-column: 1;
+            grid-row: 2;
+            position: relative;
+            top: -10pt
+        }
+        #info_div h3
+        {
+            color: var(--main_color1);            
+            font-family: var(--font_family1);
+            font-size: var(--general_h3_font_size);
+        }
+        #infoa_div{
+            grid-column: 3;
+            grid-row: 2;
         }
         #info_div a{
             position: relative;
-            
-            top: 85%;
-            left: 95%;
         }
         #info_div a img{            
             width: 20pt;
